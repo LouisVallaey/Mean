@@ -23,10 +23,11 @@ mongoose.connection.on('error', (err) => {
 const app = express();
 const server = require('http').Server(app);
 
-/* const users = require('./controllers/users.controller');
-const bedrijf = require('./controllers/bedrijf.controller');
+
+const user = require('./controllers/user.controller');
+/* const bedrijf = require('./controllers/bedrijf.controller');
 const conversation = require('./controllers/conversation.controller');
-const producten = require('./controllers/product.controller'); */
+const producten = require('./controllers/product.controller');  */
 
 // Port Number: 1ste is voor development 2de voor prod en deployment
 const port =4000;
@@ -47,7 +48,8 @@ app.use(passport.session());
 
 require('./config/passport')(passport);
 
-/* app.use('/users', users);
+app.use('/user', user);
+/* 
 app.use('/bedrijf', bedrijf);
 app.use('/conversation',conversation);
 app.use('/product', producten); */
