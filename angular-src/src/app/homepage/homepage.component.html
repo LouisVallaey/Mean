@@ -1,12 +1,12 @@
 <div class="header" style="height:0px;">
-    <div class="logo"></div>
+    <div class="logo" [routerLink]="['/']"><div class="line"></div></div>
     <div class="menu">
-        <div class="button">
+        <div class="button" [routerLink]="['/login']" [routerLinkActive]="['active']" >
             <p>Sign up now</p>
         </div>
     </div>
 </div>
-<div class="Banner">
+<div class="banner">
     <div class="container">
         <div>
             <h1>How does it work ?</h1>
@@ -55,9 +55,4 @@
         </div>
     </div>
 </div>
-<div class="footer">
-    <div class="icon"></div>
-    <div class="menu">
-        <p>©2017 Louis Vallaey</p>
-    </div>
-</div>
+<app-footer></app-footer>

@@ -45,9 +45,7 @@ app.use(bodyParser.json());
 // Passport Middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
 require('./config/passport')(passport);
-
 app.use('/user', user);
 /* 
 app.use('/bedrijf', bedrijf);

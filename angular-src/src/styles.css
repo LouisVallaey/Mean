@@ -24,15 +24,28 @@ p {
 }
 
 .header .logo {
+    transition: 0.4s;
+    cursor: pointer;
+    outline: none;
     margin-top: 15px;
     width: 160px;
     height: 35px;
     background-size: 160px;
     background-repeat: no-repeat;
-    background-image: url(../../assets/image/fastlogo.png);
+    background-image: url("assets/image/fastlogo.png");
     position: absolute;
 }
+.header .logo .line{
+    margin-left: 5px;
+    transition: 0.3s;
+    width: 0;
+    height: 36px;
+    border-bottom: 2px solid #FFFFFF;
 
+}
+.header .logo:hover .line{
+ width: 150px;
+}
 .header h1 {
     position: absolute;
     margin: 0px;
@@ -72,7 +85,10 @@ p {
     background-color: rgba(255, 255, 255, 0.03);
     opacity: 1;
 }
-
+.header .menu .active{
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 1;
+}
 .banner {
     position: relative;
     height: 560px;
@@ -115,7 +131,7 @@ p {
     display: inline-block;
     position: relative;
     background-repeat: no-repeat;
-    background-image: url(image/arrow.png);
+    background-image: url("assets/image/arrow.png");
     background-size: 60px;
     background-position: center;
     height: 200px;
@@ -146,19 +162,19 @@ p {
 
 .banner .container .step:nth-child(2) {
     background-repeat: no-repeat;
-    background-image: url(image/package.png);
+    background-image: url("assets/image/package.png");
 }
 
 .banner .container .step:nth-child(4) {
 
     background-repeat: no-repeat;
-    background-image: url(image/listing.png);
+    background-image: url("assets/image/listing.png");
 }
 
 .banner .container .step:nth-child(6) {
 
     background-repeat: no-repeat;
-    background-image: url(image/handover.png);
+    background-image: url("assets/image/handover.png");
 }
 
 .banner .more {
@@ -194,7 +210,7 @@ p {
     background-size: 40px;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(image/arrowh.png);
+    background-image: url("assets/image/arrowh.png");
 }
 
 .banner .more:hover a {
@@ -246,17 +262,17 @@ p {
 
 .content .contentstep .step:nth-child(1) {
     background-repeat: no-repeat;
-    background-image: url(image/packageb.png);
+    background-image: url("assets/image/packageb.png");
 }
 
 .content .contentstep .step:nth-child(2) {
     background-repeat: no-repeat;
-    background-image: url(image/listingb.png);
+    background-image: url("assets/image/listingb.png");
 }
 
 .content .contentstep .step:nth-child(3) {
     background-repeat: no-repeat;
-    background-image: url(image/handoverb.png);
+    background-image: url("assets/image/handoverb.png");
 }
 
 .content .logincon {
@@ -383,14 +399,14 @@ p {
     height: 40px;
     background-size: 65px;
     background-repeat: no-repeat;
-    background-image: url(image/logodilb.png);
+    background-image: url("assets/image/logodilb.png");
     position: absolute;
 }
 
 .footer .menu {
-    position: absolute;
-    right: 15;
-
+    margin-right: 15px;
+   position: relative;
+   float: right;
 }
 
 .footer .menu p {
