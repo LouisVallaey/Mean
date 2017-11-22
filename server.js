@@ -1,31 +1,68 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const path = require('path');
-const http = require('http');
-const app = express();
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const passport = require('passport');
+const mongoose = require('mongoose');
+const config = require('./config/database');
 
-// API file for interacting with MongoDB
-const api = require('./server/routes/api');
 
-// Parsers
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false}));
+// Connect To Database
+mongoose.connect(config.database);
 
-// Angular DIST output folder
-app.use(express.static(path.join(__dirname, 'dist')));
-
-// API location
-app.use('/api', api);
-
-// Send all other requests to the Angular app
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/index.html'));
+// On Connection
+mongoose.connection.on('connected', () => {
+  console.log('Connected to database '+config.database);
 });
 
-//Set Port
-const port = process.env.PORT || '3000';
-app.set('port', port);
+// On Error
+mongoose.connection.on('error', (err) => {
+  console.log('Database error: '+err);
+});
 
-const server = http.createServer(app);
+const app = express();
+const server = require('http').Server(app);
 
-server.listen(port, () => console.log(`Running on localhost:${port}`));
+/* const users = require('./controllers/users.controller');
+const bedrijf = require('./controllers/bedrijf.controller');
+const conversation = require('./controllers/conversation.controller');
+const producten = require('./controllers/product.controller'); */
+
+// Port Number: 1ste is voor development 2de voor prod en deployment
+const port =4000;
+//const port = process.env.PORT || 8080;
+
+// CORS Middleware
+app.use(cors());
+
+// Set Static Folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Body Parser Middleware
+app.use(bodyParser.json());
+
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
+/* app.use('/users', users);
+app.use('/bedrijf', bedrijf);
+app.use('/conversation',conversation);
+app.use('/product', producten); */
+
+// Index Route
+app.get('/', (req, res) => {
+  res.send('Invalid Endpoint');
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+// Start Server
+server.listen(port, () => {
+  console.log(__dirname);
+  console.log('Server started on port '+port);
+});
