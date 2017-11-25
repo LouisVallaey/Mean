@@ -1,23 +1,15 @@
 <app-header></app-header>
-<alert></alert>
 <div class="content">
     <div class="logincon">
-        <p>Sign in :</p>
+        <p>Apply for driver :</p>
         <form>
             <p>Email</p>
             <input type="text" id="Email" placeholder="Example@example.com">
             <p>Password</p>
             <input type="password" id="passw" placeholder="Password">
-            <div class="forgot">
-                <a href="#">forgot password?</a>
-                <div></div>
-            </div>
-            <button type="submit">LOGIN</button>
+            <input style="padding-top:11px;" type="password" id="passwa" placeholder="Confirm Password">
+            <button type="submit">Apply</button>
         </form>
-        <div class="needa">
-            <a [routerLink]="['/register']" >Need an account?</a>
-            <div></div>
-        </div>
     </div>
 </div>
 <div class="footer" style="position:absolute; bottom:0;">

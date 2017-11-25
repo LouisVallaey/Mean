@@ -244,6 +244,7 @@ p {
 }
 
 .content .contentstep .step {
+    height: 155px;
     padding: 20px;
     transition: 0.3s;
     opacity: 0.7;
@@ -285,7 +286,9 @@ p {
     font-weight: 100;
     color: rgba(0, 0, 0, 0.8);
 }
+.content .logincon form{
 
+}
 .content .logincon form p {
     width: 380px;
     margin: 10px auto 0 auto;
@@ -321,6 +324,7 @@ p {
 
 
 .content .logincon button {
+    outline: none;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.08), 2px 3px 8px rgba(0, 0, 0, 0.18);
     display: block;
     transition: 0.4s;
@@ -415,4 +419,13 @@ p {
     color: rgba(2, 115, 212, 0.79);
     line-height: 60px;
     margin: 0;
+}
+.help-block{
+    width: 380px;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(236, 62, 62, 0.79);
+    line-height: 14px;
+    margin: 0 auto 0 auto;
 }
