@@ -3,6 +3,7 @@ import {User} from '../_models/user';
 import { Router } from '@angular/router';
 import { UserService } from '../_services/user.service';
 import {AlertService} from '../_services/alert.service';
+
 @Component({
     selector: 'app-registerpage',
     moduleId: module.id,
@@ -18,7 +19,9 @@ export class RegisterpageComponent {
 
     register() {
         if (this.model.password === this.model.confirmPassword){
+            
             console.log(this.model);
+            this.model.roles = ["USER"];
             this.model.username = this.model.email;
             this.userService.create(this.model)
                 .subscribe(

@@ -1,14 +1,31 @@
 <app-header></app-header>
-<div class="content">
+<alert></alert>
+<div class="content" style="padding: 20px; margin-top:120px;background-color:white;box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.08), 2px 3px 8px rgba(0, 0, 0, 0.18);border-radius:2px;width:40%;">
     <div class="logincon">
         <p>Apply for driver :</p>
-        <form>
+        <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+            <p>First name:</p>
+            <input type="text" id="firstName" placeholder="firstname" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel"
+                required />
+            <div *ngIf="f.submitted && !firstName.valid" class="help-block">required field !</div>
+
+            <p>Last name:</p>
+            <input type="text" id="lastName" placeholder="lastname" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel"
+                required />
+            <div *ngIf="f.submitted && !lastName.valid" class="help-block">required field !</div>
+
             <p>Email</p>
-            <input type="text" id="Email" placeholder="Example@example.com">
+            <input type="text" id="email" placeholder="Example@example.com" name="email" [(ngModel)]="model.email" #email="ngModel" required
+                pattern="[a-zA-ZQ0-9_.+-]{2,}@[a-zA-Z0–9-]{2,}[.][a-zA-Z0–9.]{2,}" />
+            <div *ngIf="f.submitted && !email.valid" class="help-block">Has to be a valid email !</div>
+
             <p>Password</p>
-            <input type="password" id="passw" placeholder="Password">
-            <input style="padding-top:11px;" type="password" id="passwa" placeholder="Confirm Password">
-            <button type="submit">Apply</button>
+            <input type="password" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required>
+
+            <input style="padding-top:11px;" type="password" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="model.confirmPassword"
+                #confirmPassword="ngModel" validateEqual="password" required>
+            <div *ngIf="f.submitted && !confirmPassword.valid" class="help-block">Password must be the same !</div>
+            <button type="submit">APPLY</button>
         </form>
     </div>
 </div>

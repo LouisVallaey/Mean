@@ -7,14 +7,12 @@ import {AuthenticationService} from '../_services/authentication.service';
 import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
-    selector: 'app-header',
+    selector: 'app-headerDash',
     moduleId: module.id,
-    templateUrl: 'header.component.html'
+    templateUrl: 'headerDash.component.html'
 })
-export class HeaderComponent { 
-    constructor( private authenticationService: AuthenticationService){}
-    logout(){
-        console.log("testloguit");
-        this.authenticationService.logout;
-    }
+export class HeaderDashComponent { 
+    constructor(){}
+
+    
 }

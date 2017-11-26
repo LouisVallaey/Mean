@@ -20,10 +20,10 @@ service.getByUsername = getByUsername;
 
 module.exports = service;
 
-function authenticate(username, password) {
+function authenticate(email, password) {
     var deferred = Q.defer();
 
-    db.users.findOne({ username: username }, function (err, user) {
+    db.users.findOne({ email: email }, function (err, user) {
         if (err) deferred.reject(err.name + ': ' + err.message);
 
         if (user && bcrypt.compareSync(password, user.hash)) {

@@ -26,6 +26,8 @@
     "express": "^4.16.1",
     "mongodb": "^2.2.31",
     "rxjs": "^5.2.0",
+    "angular2-jwt": "^0.1.28",
+    "ngx-permissions": "^2.1.1",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

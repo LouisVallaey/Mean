@@ -12,14 +12,14 @@ router.delete('/:_id', _delete);
 module.exports = router;
  
 function authenticate(req, res) {
-    userService.authenticate(req.body.username, req.body.password)
+    userService.authenticate(req.body.email, req.body.password)
         .then(function (user) {
             if (user) {
                 // authentication successful
                 res.send(user);
             } else {
                 // authentication failed
-                res.status(400).send('Username or password is incorrect');
+                res.status(400).send('email or password is incorrect');
             }
         })
         .catch(function (err) {
