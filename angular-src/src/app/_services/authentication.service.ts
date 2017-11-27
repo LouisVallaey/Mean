@@ -14,8 +14,8 @@ export class AuthenticationService {
     user: any;
     isDev:boolean;
     constructor(private http:Http,private router: Router, private userService:UserService, private permissionsService: NgxPermissionsService) {
-       // this.isDev=false; //bij deployen
-        this.isDev=true; //bij development
+       this.isDev=false; //bij deployen
+       // this.isDev=true; //bij development
     }
 
     //hier aanpassen voor de rechten? user.token
@@ -64,7 +64,7 @@ export class AuthenticationService {
         if(this.isDev){
           return 'http://localhost:4000'+ep;
         } else {
-          return 'https://projectwebappsdaniel.herokuapp.com'+ep;
+          return 'https://projectwebappslouis.herokuapp.com'+ep;
         }
       }
 } 

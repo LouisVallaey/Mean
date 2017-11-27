@@ -7,8 +7,8 @@ export class UserService {
     isDev:boolean;
 
     constructor(private http: Http) { 
-        //this.isDev=false; //bij deployen
-        this.isDev=true; //bij development
+        this.isDev=false; //bij deployen
+        //this.isDev=true; //bij development
     }
  
     getAll() {
@@ -35,7 +35,7 @@ export class UserService {
         if(this.isDev){
             return 'http://localhost:4000'+ep;
         } else {
-          return 'https://projectwebappsdaniel.herokuapp.com'+ep;
+          return 'https://projectwebappslouis.herokuapp.com'+ep;
         }
     }
 }
