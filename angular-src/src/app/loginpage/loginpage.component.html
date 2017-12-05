@@ -1,5 +1,4 @@
 <app-header></app-header>
-<alert></alert>
 <div class="content" style="padding: 20px; margin-top:120px;background-color:white;box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.08), 2px 3px 8px rgba(0, 0, 0, 0.18);border-radius:2px;width:40%;">
     <div class="logincon">
         <p>Sign in :</p>
@@ -9,6 +8,7 @@
             <div *ngIf="f.submitted && !email.valid" class="help-block">Has to be a valid email !</div>
             <p>Password</p>
             <input type="password" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required>
+            <div *ngIf="f.submitted && !password.valid" class="help-block">required !</div>
             <div class="forgot">
                 <a href="#">forgot password?</a>
                 <div></div>

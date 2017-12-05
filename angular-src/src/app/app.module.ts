@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import {HomepageComponent} from './homepage/homepage.component';
 import {HeaderComponent} from './header/header.component';
-import {HeaderDashComponent} from './headerDash/headerDash.component';
 import {FooterComponent} from './footer/footer.component';
 import {LoginpageComponent} from './loginpage/loginpage.component';
 import {RegisterpageComponent} from './registerpage/registerpage.component';
 import {ApplypageComponent} from './applypage/applypage.component';
 import { ListingpageUserComponent} from './listingUsers/listingpageUser.component';
 import {UserService} from './_services/user.service';
+import {PackageService} from './_services/package.service';
 import{AlertComponent} from './_directives/alert.component';
 import{AlertService} from './_services/alert.service';
 import { NgxPermissionsModule} from 'ngx-permissions';
@@ -22,7 +22,6 @@ import { AuthGuard } from './_guards/auth.guard';
   declarations: [
     FooterComponent,
     HeaderComponent,
-    HeaderDashComponent,
     HomepageComponent,
     LoginpageComponent,
     RegisterpageComponent,
@@ -39,6 +38,7 @@ import { AuthGuard } from './_guards/auth.guard';
     HttpModule              // <-Add HttpModule
   ],
   providers: [
+  PackageService,
   UserService,
   AlertService,
   AuthenticationService,

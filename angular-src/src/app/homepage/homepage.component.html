@@ -1,18 +1,39 @@
-<div class="header" style="height:0px;">
-        <div class="logo" [routerLink]="['/']">
+<ng-template [ngxPermissionsOnly]="['USER']">
+        <div class="header" style="height:0px;">
+            <div class="logo" [routerLink]="['/']">
+                <div class="line"></div>
+            </div>
             <div class="line"></div>
-        </div>
-        <div class="line"></div>
-        <div class="menu">
-            <div class="list">
-                <div>About</div>
-                <div [routerLink]="['/applydriver']">Apply for driver</div>
+            <div class="menu">
+                <div class="list" style="right:120px;">
+                    <div [routerLink]="['/listing']">My listing</div>
+                    <div [routerLink]="['/applydriver']">Apply for driver</div>
+                </div>
+                <div class="button" (click)="logout()">
+                    <p>Logout</p>
+                </div>
             </div>
-            <div class="button" [routerLink]="['/login']">
-                <p>Sign up now</p>
+        </div>
+    </ng-template>
+
+
+<ng-template [ngxPermissionsExcept]="['DRIVER','USER']">
+        <div class="header" style="height:0px;">
+            <div class="logo" [routerLink]="['/']">
+                <div class="line"></div>
+            </div>
+            <div class="line"></div>
+            <div class="menu">
+                <div class="list">
+                    <div>About</div>
+                    <div [routerLink]="['/applydriver']">Apply for driver</div>
+                </div>
+                <div class="button" [routerLink]="['/login']">
+                    <p>Sign up now</p>
+                </div>
             </div>
         </div>
-</div>
+    </ng-template>
 <div class="banner">
     <div class="container">
         <div>

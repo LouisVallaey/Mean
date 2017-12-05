@@ -25,13 +25,14 @@ const server = require('http').Server(app);
 
 
 const user = require('./controllers/user.controller');
+const package = require('./controllers/package.controller');
 /* const bedrijf = require('./controllers/bedrijf.controller');
 const conversation = require('./controllers/conversation.controller');
 const producten = require('./controllers/product.controller');  */
 
 // Port Number: 1ste is voor development 2de voor prod en deployment
-//const port =4000;
-const port = process.env.PORT || 8080;
+const port =4000;
+//const port = process.env.PORT || 8080;
 
 // CORS Middleware
 app.use(cors());
@@ -47,6 +48,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 require('./config/passport')(passport);
 app.use('/user', user);
+app.use('/package', package);
 /* 
 app.use('/bedrijf', bedrijf);
 app.use('/conversation',conversation);
