@@ -33,3 +33,20 @@
         </div>
     </div>
 </ng-template>
+
+<ng-template [ngxPermissionsOnly]="['DRIVER']">
+    <div class="header">
+        <div class="logo" [routerLink]="['/']">
+            <div class="line"></div>
+        </div>
+        <div class="line"></div>
+        <div class="menu">
+            <div class="list" style="right:120px;">
+                <div [routerLink]="['/dashboard']">Dashboard</div>
+            </div>
+            <div class="button" (click)="logout()">
+                <p>Logout</p>
+            </div>
+        </div>
+    </div>
+</ng-template>

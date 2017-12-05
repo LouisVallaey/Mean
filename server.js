@@ -7,30 +7,26 @@ const mongoose = require('mongoose');
 const config = require('./config/database');
 
 
-// Connect To Database
+// Connection To Database
 mongoose.connect(config.database);
 
-// On Connection
+// when Connected
 mongoose.connection.on('connected', () => {
   console.log('Connected to database '+config.database);
 });
 
-// On Error
+// when error 
 mongoose.connection.on('error', (err) => {
   console.log('Database error: '+err);
 });
 
 const app = express();
 const server = require('http').Server(app);
-
-
 const user = require('./controllers/user.controller');
 const package = require('./controllers/package.controller');
-/* const bedrijf = require('./controllers/bedrijf.controller');
-const conversation = require('./controllers/conversation.controller');
-const producten = require('./controllers/product.controller');  */
 
-// Port Number: 1ste is voor development 2de voor prod en deployment
+
+// Port Number: 1st for development 2nd for prod 
 const port =4000;
 //const port = process.env.PORT || 8080;
 
@@ -49,10 +45,6 @@ app.use(passport.session());
 require('./config/passport')(passport);
 app.use('/user', user);
 app.use('/package', package);
-/* 
-app.use('/bedrijf', bedrijf);
-app.use('/conversation',conversation);
-app.use('/product', producten); */
 
 // Index Route
 app.get('/', (req, res) => {

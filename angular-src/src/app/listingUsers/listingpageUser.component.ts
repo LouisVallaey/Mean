@@ -42,6 +42,7 @@ export class ListingpageUserComponent implements OnInit {
         this.add = show;
     }
     addPackage() {
+        this.model._driverId = "";
         this.model._userId = this.currentUser._id;
         this.model.status = "package pickup by driver";
         this.packageService.create(this.model).subscribe(
@@ -52,6 +53,7 @@ export class ListingpageUserComponent implements OnInit {
                 let newPackage = new Package();
                 newPackage._id= this.model._id;
                 newPackage._userId = this.model._userId;
+                newPackage._driverId = this.model._driverId;
                 newPackage.addressline1 = this.model.addressline1;
                 newPackage. addressline2 = this.model.addressline2;
                 newPackage.city = this.model.city;

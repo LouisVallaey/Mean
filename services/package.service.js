@@ -31,6 +31,7 @@ function update(_id, packageParam) {
     var set = {
         _id: packageParam._id,
         _userId: packageParam._userId,
+        _driverId : packageParam._driverId,
         addressline1: packageParam.addressline1,
         addressline2: packageParam.addressline2,
         city: packageParam.city,

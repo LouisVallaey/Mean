@@ -596,6 +596,184 @@ p {
           color: rgba(0, 0, 0, 0.7);
           font-size: 16px; }
 
+.dashboardDriver {
+  margin-top: -60px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll; }
+  .dashboardDriver .menuleft {
+    width: 255px;
+    margin-top: -60px;
+    padding-top: 60px;
+    height: 100%;
+    position: fixed;
+    background: #f9f9f9;
+    border-right: 1px solid #dadada; }
+    .dashboardDriver .menuleft .name {
+      background-size: 32px 32px;
+      background-position: 15px 4px;
+      background-repeat: no-repeat;
+      background-image: url("assets/image/handoverb.png");
+      margin-top: 60px; }
+      .dashboardDriver .menuleft .name p {
+        font-weight: 100;
+        padding: 7px;
+        text-align: center;
+        color: #41a3ff;
+        font-size: 20px;
+        border-bottom: 1px solid #dadada; }
+    .dashboardDriver .menuleft .menu .menuitem {
+      outline: none;
+      transition: 0.4s;
+      padding: 12px 0px 12px 25px;
+      text-align: left;
+      color: rgba(0, 0, 0, 0.6);
+      line-height: 27px;
+      font-size: 18px;
+      border-bottom: 1px solid #ece9e9; }
+      .dashboardDriver .menuleft .menu .menuitem div {
+        transition: 0.4s;
+        border-bottom: 2px solid #41a3ff;
+        width: 0; }
+      .dashboardDriver .menuleft .menu .menuitem:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.7); }
+        .dashboardDriver .menuleft .menu .menuitem:hover div {
+          width: 15px; }
+  .dashboardDriver .workspace {
+    overflow: scroll;
+    margin-left: 255px;
+    position: relative; }
+    .dashboardDriver .workspace .overview {
+      margin: 20% auto 0 auto;
+      text-align: center; }
+      .dashboardDriver .workspace .overview .box {
+        padding: 20px;
+        margin: 35px;
+        position: relative;
+        transition: 0.4s;
+        border: 1px solid rgba(65, 163, 255, 0.21);
+        border-radius: 2px;
+        background-color: #fcfcfc;
+        display: inline-block;
+        height: 250px;
+        width: 250px; }
+        .dashboardDriver .workspace .overview .box h1 {
+          margin: 0;
+          font-size: 130px;
+          color: #41a3ff; }
+        .dashboardDriver .workspace .overview .box p {
+          font-size: 23px;
+          color: rgba(65, 163, 255, 0.8);
+          margin: 0;
+          font-family: 'Open Sans', sans-serif; }
+        .dashboardDriver .workspace .overview .box:hover {
+          cursor: pointer;
+          background-color: #ffffff;
+          border: 1px solid rgba(65, 163, 255, 0.41); }
+    .dashboardDriver .workspace .tablepackage {
+      margin: 130px auto 0 auto;
+      width: 80%; }
+      .dashboardDriver .workspace .tablepackage .head {
+        width: 100%;
+        height: 60px;
+        border-radius: 4px 4px 0px 0px;
+        border-left: 1px solid #dddddd;
+        border-right: 1px solid #dddddd;
+        border-top: 1px solid #dddddd;
+        background-color: white; }
+        .dashboardDriver .workspace .tablepackage .head p {
+          line-height: 44px;
+          font-weight: 100;
+          padding: 7px 7px 7px 24px;
+          text-align: left;
+          color: #41a3ff;
+          font-size: 20px; }
+      .dashboardDriver .workspace .tablepackage .list {
+        width: 100%;
+        background-color: white;
+        border-top: 1px solid #dddddd;
+        border-right: 1px solid #dddddd;
+        border-left: 1px solid #dddddd; }
+        .dashboardDriver .workspace .tablepackage .list .item {
+          position: relative;
+          width: 100%;
+          border-bottom: 1px solid #dddddd; }
+          .dashboardDriver .workspace .tablepackage .list .item .ctn {
+            padding-top: 4px;
+            padding-left: 4px;
+            padding-right: 4px;
+            height: 100%;
+            float: left; }
+            .dashboardDriver .workspace .tablepackage .list .item .ctn p {
+              font-weight: 100;
+              text-align: left;
+              color: #41a3ff;
+              font-size: 20px; }
+          .dashboardDriver .workspace .tablepackage .list .item .info {
+            text-align: left;
+            display: inline-block;
+            margin: 4px 0 4px 0;
+            border: 1px solid #dddddd;
+            width: 35%;
+            height: 85px;
+            border-radius: 2px;
+            padding-top: 4px;
+            padding-bottom: 4px; }
+            .dashboardDriver .workspace .tablepackage .list .item .info p {
+              padding-left: 15px;
+              font-size: 15px; }
+              .dashboardDriver .workspace .tablepackage .list .item .info p:nth-child(1) {
+                color: #41a3ff;
+                font-size: 16px; }
+          .dashboardDriver .workspace .tablepackage .list .item .status {
+            vertical-align: top;
+            height: 85px;
+            display: inline-block;
+            margin: 4px 0 4px 0;
+            border: 1px solid #dddddd;
+            width: 24%;
+            border-radius: 2px;
+            padding-top: 4px;
+            padding-bottom: 4px; }
+            .dashboardDriver .workspace .tablepackage .list .item .status p {
+              padding-left: 15px;
+              font-size: 15px; }
+              .dashboardDriver .workspace .tablepackage .list .item .status p:nth-child(1) {
+                color: #41a3ff;
+                font-size: 16px; }
+            .dashboardDriver .workspace .tablepackage .list .item .status button {
+              width: 90%;
+              height: 50px;
+              margin-top: 7px;
+              outline: none;
+              transition: 0.4s;
+              background-color: #41a3ff;
+              border-radius: 3px;
+              border: none;
+              color: white;
+              font-weight: bold;
+              font-size: 15px; }
+              .dashboardDriver .workspace .tablepackage .list .item .status button:hover {
+                background-color: #2f9bff;
+                cursor: pointer; }
+          .dashboardDriver .workspace .tablepackage .list .item .add {
+            float: right;
+            height: 100%;
+            background-color: #b2ffb6;
+            color: #40c746;
+            position: absolute;
+            right: 0;
+            top: 0; }
+            .dashboardDriver .workspace .tablepackage .list .item .add p {
+              font-size: 18px;
+              line-height: 30px;
+              padding: 33px 5px 33px 5px; }
+            .dashboardDriver .workspace .tablepackage .list .item .add:hover {
+              background-color: #8cff92;
+              cursor: pointer; }
+
 .alert {
   transition: 4s;
   position: absolute;

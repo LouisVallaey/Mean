@@ -1,0 +1,53 @@
+<app-header></app-header>
+<div class="dashboardDriver">
+    <div class="menuleft">
+        <div class="name">
+            <p>{{currentUser.firstName}} {{currentUser.lastName}}</p>
+        </div>
+        <div class="menu">
+            <div class="menuitem" [routerLink]="['/dashboard/available']">
+                <p>Available packages</p>
+                <div></div>
+            </div>
+            <div class="menuitem" [routerLink]="['/dashboard/active']">
+                <p>Active packages</p>
+                <div></div>
+            </div>
+            <div class="menuitem" [routerLink]="['/dashboard/delivered']">
+                <p>Delivered packages</p>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div class="workspace">
+        <div class="tablepackage">
+            <div class="head">
+                <p>Available packages</p>
+            </div>
+            <div class="list">
+                <div class="item" *ngFor="let package of packages">
+                    <div class="ctn">
+                        <p></p>
+                    </div>
+                    <div class="info" style="width:45%;text-align:left;">
+                        <p>Sender</p>
+                        <p>{{package.addressline1}} {{package.addressline2}}</p>
+                        <p>{{package.postalcode}} {{package.city}}</p>
+                        <p>{{package.country}}</p>
+                    </div>
+                    <div class="info"style="width:45%;text-align:left;">
+                        <p>Receiver</p>
+                        <p>{{package.addressline1Rec}} {{package.addressline2Rec}}</p>
+                        <p>{{package.postalcodeRec}} {{package.cityRec}}</p>
+                        <p>{{package.countryRec}}</p>
+                    </div>
+                    <div class="add">
+                        <div>
+                            <p>ADD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

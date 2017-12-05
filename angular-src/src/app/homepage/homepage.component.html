@@ -1,39 +1,53 @@
 <ng-template [ngxPermissionsOnly]="['USER']">
-        <div class="header" style="height:0px;">
-            <div class="logo" [routerLink]="['/']">
-                <div class="line"></div>
-            </div>
+    <div class="header" style="height:0px;">
+        <div class="logo" [routerLink]="['/']">
             <div class="line"></div>
-            <div class="menu">
-                <div class="list" style="right:120px;">
-                    <div [routerLink]="['/listing']">My listing</div>
-                    <div [routerLink]="['/applydriver']">Apply for driver</div>
-                </div>
-                <div class="button" (click)="logout()">
-                    <p>Logout</p>
-                </div>
+        </div>
+        <div class="line"></div>
+        <div class="menu">
+            <div class="list" style="right:120px;">
+                <div [routerLink]="['/listing']">My listing</div>
+                <div [routerLink]="['/applydriver']">Apply for driver</div>
+            </div>
+            <div class="button" (click)="logout()">
+                <p>Logout</p>
             </div>
         </div>
-    </ng-template>
-
-
+    </div>
+</ng-template>
+<ng-template [ngxPermissionsOnly]="['DRIVER']">
+    <div class="header" style="height:0px;">
+        <div class="logo" [routerLink]="['/']">
+            <div class="line"></div>
+        </div>
+        <div class="line"></div>
+        <div class="menu">
+            <div class="list" style="right:120px;">
+                <div [routerLink]="['/dashboard']">Dashboard</div>
+            </div>
+            <div class="button" (click)="logout()">
+                <p>Logout</p>
+            </div>
+        </div>
+    </div>
+</ng-template>
 <ng-template [ngxPermissionsExcept]="['DRIVER','USER']">
-        <div class="header" style="height:0px;">
-            <div class="logo" [routerLink]="['/']">
-                <div class="line"></div>
-            </div>
+    <div class="header" style="height:0px;">
+        <div class="logo" [routerLink]="['/']">
             <div class="line"></div>
-            <div class="menu">
-                <div class="list">
-                    <div>About</div>
-                    <div [routerLink]="['/applydriver']">Apply for driver</div>
-                </div>
-                <div class="button" [routerLink]="['/login']">
-                    <p>Sign up now</p>
-                </div>
+        </div>
+        <div class="line"></div>
+        <div class="menu">
+            <div class="list">
+                <div>About</div>
+                <div [routerLink]="['/applydriver']">Apply for driver</div>
+            </div>
+            <div class="button" [routerLink]="['/login']">
+                <p>Sign up now</p>
             </div>
         </div>
-    </ng-template>
+    </div>
+</ng-template>
 <div class="banner">
     <div class="container">
         <div>
@@ -62,23 +76,38 @@
         <h1 style="color: rgba(0, 0, 0, 0.8); font-weight:bold;">minimal cost</h1>
     </div>
     <div>
-        <p>Donec ut tristique nisl. Pellentesque suscipit nisi eget convallis congue. Nam varius sollicitudin tempor. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Fusce auctor venenatis porttitor. Duis eu elit accumsan, varius justo ac, luctus urna. Sed in urna massa. Curabitur finibus venenatis rhoncus. Etiam ultricies quam diam, a venenatis ligula elementum quis. Vivamus interdum neque ac ornare semper. Curabitur sit amet faucibus sem. Curabitur eu neque justo. Sed libero nulla, ultrices quis nibh vitae, blandit ornare diam. Maecenas a faucibus sapien.</p>
+        <p>Donec ut tristique nisl. Pellentesque suscipit nisi eget convallis congue. Nam varius sollicitudin tempor. Suspendisse
+            potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae Fusce auctor
+            venenatis porttitor. Duis eu elit accumsan, varius justo ac, luctus urna. Sed in urna massa. Curabitur finibus
+            venenatis rhoncus. Etiam ultricies quam diam, a venenatis ligula elementum quis. Vivamus interdum neque ac ornare
+            semper. Curabitur sit amet faucibus sem. Curabitur eu neque justo. Sed libero nulla, ultrices quis nibh vitae,
+            blandit ornare diam. Maecenas a faucibus sapien.</p>
     </div>
     <div class="contentstep">
         <div class="step">
             <div class="text">
-                <p>Pellentesque a tortor dui. Vestibulum accumsan nulla quis vehicula cursus. Nullam eu mi eget neque ullamcorper sagittis eget eu orci. In eget lacus libero. Curabitur nec ornare augue. Morbi venenatis lobortis urna, eget maximus tortor iaculis quis. Curabitur in lectus est. Proin volutpat ipsum sit amet sapien congue, et vehicula ex interdum. Sed euismod,
+                <p>Pellentesque a tortor dui. Vestibulum accumsan nulla quis vehicula cursus. Nullam eu mi eget neque ullamcorper
+                    sagittis eget eu orci. In eget lacus libero. Curabitur nec ornare augue. Morbi venenatis lobortis urna,
+                    eget maximus tortor iaculis quis. Curabitur in lectus est. Proin volutpat ipsum sit amet sapien congue,
+                    et vehicula ex interdum. Sed euismod,
                 </p>
             </div>
         </div>
         <div class="step">
             <div class="text">
-                <p>eros non gravida euismod, nisi mi malesuada ex, at sollicitudin sapien metus sit amet est. Vivamus tincidunt vel eros in tempus. Nullam posuere nec velit eu dictum. Morbi ac tincidunt quam. Sed maximus felis vehicula, placerat est non, egestas ligula. Nam mollis risus quis tincidunt lacinia. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras nec leo sit amet nibh lobortis imperdiet.</p>
+                <p>eros non gravida euismod, nisi mi malesuada ex, at sollicitudin sapien metus sit amet est. Vivamus tincidunt
+                    vel eros in tempus. Nullam posuere nec velit eu dictum. Morbi ac tincidunt quam. Sed maximus felis vehicula,
+                    placerat est non, egestas ligula. Nam mollis risus quis tincidunt lacinia. Pellentesque habitant morbi
+                    tristique senectus et netus et malesuada fames ac turpis egestas. Cras nec leo sit amet nibh lobortis
+                    imperdiet.</p>
             </div>
         </div>
         <div class="step">
             <div class="text">
-                <p>Phasellus sollicitudin diam a felis rhoncus condimentum. Vestibulum sit amet urna quis dui euismod pharetra. Nunc imperdiet blandit vestibulum. Praesent vitae justo in leo tempus ullamcorper non ac turpis. Aenean et dignissim sapien. Phasellus tristique neque luctus risus consectetur accumsan. Sed vulputate leo vel justo consequat,</p>
+                <p>Phasellus sollicitudin diam a felis rhoncus condimentum. Vestibulum sit amet urna quis dui euismod pharetra.
+                    Nunc imperdiet blandit vestibulum. Praesent vitae justo in leo tempus ullamcorper non ac turpis. Aenean
+                    et dignissim sapien. Phasellus tristique neque luctus risus consectetur accumsan. Sed vulputate leo vel
+                    justo consequat,</p>
             </div>
         </div>
     </div>

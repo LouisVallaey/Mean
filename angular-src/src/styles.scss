@@ -526,8 +526,8 @@ p {
                 bottom: 0px;
                 right: 13px;
                 margin-bottom: 7px;
-                &:hover{
-                    background-color: #2f9bff; 
+                &:hover {
+                    background-color: #2f9bff;
                     cursor: pointer;
                 }
             }
@@ -559,7 +559,7 @@ p {
             font-size: 25px;
             color: #41a3ff;
         }
-        .close{
+        .close {
             position: absolute;
             right: 10px;
             top: 5px;
@@ -704,19 +704,232 @@ p {
     }
 }
 
+.dashboardDriver {
+    margin-top: -60px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    .menuleft {
+        width: 255px;
+        margin-top: -60px;
+        padding-top: 60px;
+        height: 100%;
+        position: fixed;
+        background: #f9f9f9;
+        border-right: 1px solid #dadada;
+        .name {
+            background-size: 32px 32px;
+            background-position: 15px 4px;
+            background-repeat: no-repeat;
+            background-image: url("assets/image/handoverb.png");
+            margin-top: 60px;
+            p {
+                font-weight: 100;
+                padding: 7px;
+                text-align: center;
+                color: #41a3ff;
+                font-size: 20px;
+                border-bottom: 1px solid #dadada;
+            }
+        }
+        .menu {
+            .menuitem {
+                outline: none;
+                transition: 0.4s;
+                padding: 12px 0px 12px 25px;
+                text-align: left;
+                color: rgba(0, 0, 0, 0.6);
+                line-height: 27px;
+                font-size: 18px;
+                border-bottom: 1px solid #ece9e9;
+                div {
+                    transition: 0.4s;
+                    border-bottom: 2px solid #41a3ff;
+                    width: 0;
+                }
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgba(255, 255, 255, 0.7);
+                    div {
+                        width: 15px;
+                    }
+                }
+            }
+        }
+    }
+    .workspace {
+        overflow: scroll;
+        margin-left: 255px;
+        position: relative;
+        .overview {
+            margin: 20% auto 0 auto;
+            text-align: center;
+            .box {
+                padding: 20px;
+                margin: 35px;
+                position: relative;
+                transition: 0.4s;
+                border: 1px solid rgba(65, 163, 255, 0.21);
+                border-radius: 2px;
+                background-color: #fcfcfc;
+                display: inline-block;
+                height: 250px;
+                width: 250px;
+                h1 {
+                    margin: 0;
+                    font-size: 130px;
+                    color: #41a3ff;
+                }
+                p {
+                    font-size: 23px;
+                    color: rgba(65, 163, 255, 0.8);
+                    margin: 0;
+                    font-family: 'Open Sans', sans-serif;
+                }
+                &:hover {
+                    cursor: pointer;
+                    background-color: #ffffff;
+                    border: 1px solid rgba(65, 163, 255, 0.41);
+                }
+            }
+        }
+        .tablepackage {
+            margin: 130px auto 0 auto;
+            width: 80%;
+            .head {
+                width: 100%;
+                height: 60px;
+                border-radius: 4px 4px 0px 0px;
+                border-left: 1px solid #dddddd;
+                border-right: 1px solid #dddddd;
+                border-top: 1px solid #dddddd;
+                background-color: white;
+                p {
+                    line-height: 44px;
+                    font-weight: 100;
+                    padding: 7px 7px 7px 24px;
+                    text-align: left;
+                    color: #41a3ff;
+                    font-size: 20px;
+                }
+            }
+            .list {
+                width: 100%;
+                background-color: white;
+                border-top: 1px solid #dddddd;
+                border-right: 1px solid #dddddd;
+                border-left: 1px solid #dddddd;
+                .item {
+                    position: relative;
+                    width: 100%;
+                    border-bottom: 1px solid #dddddd;
+                    .ctn {
+                        padding-top: 4px;
+                        padding-left: 4px;
+                        padding-right: 4px;
+                        height: 100%;
+                        float: left;
+                        p {
+                            font-weight: 100;
+                            text-align: left;
+                            color: #41a3ff;
+                            font-size: 20px;
+                        }
+                    }
+                    .info {
+                        text-align: left;
+                        display: inline-block;
+                        margin: 4px 0 4px 0;
+                        border: 1px solid #dddddd;
+                        width: 35%;
+                        height: 85px;
+                        border-radius: 2px;
+                        padding-top: 4px;
+                        padding-bottom: 4px;
+                        p {
+                            &:nth-child(1) {
+                                color: #41a3ff;
+                                font-size: 16px;
+                            }
+                            padding-left: 15px;
+                            font-size: 15px;
+                        }
+                    }
+                    .status {
+                        vertical-align: top;
+                        height: 85px;
+                        display: inline-block;
+                        margin: 4px 0 4px 0;
+                        border: 1px solid #dddddd;
+                        width: 24%;
+                        border-radius: 2px;
+                        padding-top: 4px;
+                        padding-bottom: 4px;
+                        p {
+                            &:nth-child(1) {
+                                color: #41a3ff;
+                                font-size: 16px;
+                            }
+                            padding-left: 15px;
+                            font-size: 15px;
+                        }
+                        button {
+                            width: 90%;
+                            height: 50px;
+                            margin-top: 7px;
+                            outline: none;
+                            transition: 0.4s;
+                            background-color: #41a3ff;
+                            border-radius: 3px;
+                            border: none;
+                            color: white;
+                            font-weight: bold;
+                            font-size: 15px;
+                            &:hover {
+                                background-color: #2f9bff;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .add {
+                        float: right;
+                        height: 100%;
+                        background-color: #b2ffb6;
+                        color: #40c746;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        p {
+                            font-size: 18px;
+                            line-height: 30px;
+                            padding: 33px 5px 33px 5px;
+                        }
+                        &:hover {
+                            background-color: #8cff92;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 .alert {
     transition: 4s;
     position: absolute;
     top: 60px;
     height: 25px;
     width: 100%;
- 
 }
+
 .alert-success {
     background-color: #b2ffb6;
     color: #40c746;
     text-align: center;
 }
+
 .alert-danger {
     background-color: #ff9595;
     color: #c74040;

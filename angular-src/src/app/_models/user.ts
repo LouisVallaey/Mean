@@ -7,8 +7,6 @@ export class User {
     firstName: string;
     lastName: string;
     roles: string[];
-    online: boolean;
-
     constructor(username: string,email: string,password: string,firstName: string,lastName: string) {
         this.username = username;
         this.email = email;

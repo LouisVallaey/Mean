@@ -1,6 +1,7 @@
 export class Package {
     _id: string;
     _userId : string;
+    _driverId : string;
     addressline1 : string;
     addressline2 : string;
     city : string;
