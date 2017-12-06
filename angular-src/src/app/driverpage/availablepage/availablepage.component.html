@@ -1,25 +1,5 @@
-<app-header></app-header>
-<div class="dashboardDriver">
-    <div class="menuleft">
-        <div class="name">
-            <p>{{currentUser.firstName}} {{currentUser.lastName}}</p>
-        </div>
-        <div class="menu">
-            <div class="menuitem" [routerLink]="['/dashboard/available']">
-                <p>Available packages</p>
-                <div></div>
-            </div>
-            <div class="menuitem" [routerLink]="['/dashboard/active']">
-                <p>Active packages</p>
-                <div></div>
-            </div>
-            <div class="menuitem" [routerLink]="['/dashboard/delivered']">
-                <p>Delivered packages</p>
-                <div></div>
-            </div>
-        </div>
-    </div>
-    <div class="workspace">
+
+    <div class="workspace" [@rightCenter]="stateExpression">
         <div class="tablepackage">
             <div class="head">
                 <p>Available packages</p>
@@ -50,4 +30,3 @@
             </div>
         </div>
     </div>
-</div>

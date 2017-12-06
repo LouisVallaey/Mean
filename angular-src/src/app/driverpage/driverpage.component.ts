@@ -6,13 +6,11 @@ import { AlertService } from '../_services/alert.service';
 import { PackageService } from '../_services/package.service';
 import { Package } from '../_models/package';
 import { NgxPermissionsService } from 'ngx-permissions';
-import { slideRightLeftAnimation } from '../_animations/slide-right-left.animation';
+import { DashboardService } from '../_services/dashboard.service';
 @Component({
     selector: 'app-driverpage',
     moduleId: module.id,
-    templateUrl: 'driverpage.component.html',
-    animations: [slideRightLeftAnimation],
-        host: { '[@slideRightLeftAnimation]': '' }
+    templateUrl: 'driverpage.component.html'
 })
 export class DriverpageComponent implements OnInit {
     currentUser: User;
@@ -23,24 +21,25 @@ export class DriverpageComponent implements OnInit {
         private router: Router,
         private userService: UserService,
         private alertService: AlertService,
-        private packageService: PackageService
+        private packageService: PackageService,
+        private dashboardService: DashboardService
     ) { }
     ngOnInit() {
         this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
-        this.packageService.getAll().subscribe(
-            data => {
-                data.forEach(element => {
-                    if (element._driverId == this.currentUser._id && element._userId != "") {
-                        this.activecount = this.activecount + 1     
-                    }else if(element._driverId == "") {
-                        this.availablecount = this.availablecount + 1 
-                    }else if (element._userId == "" && element._driverId == this.currentUser._id) {
-                        this.deliveredcount = this.deliveredcount + 1
-                    }
-                });
-            },
-            error => {
-                this.alertService.error(error);
-            });
+        this.setCounterPage();
     }
+
+    setActivePage(){
+        this.dashboardService.setActivePage();
+    }
+    setAvailablePage(){
+        this.dashboardService.setAvailablePage();
+    }
+    setDeliveredPage(){
+        this.dashboardService.setDeliveredPage();
+    }
+    setCounterPage(){
+        this.dashboardService.setCounterPage();
+    }
+
 }

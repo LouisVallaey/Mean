@@ -11,7 +11,7 @@ p {
   font-family: 'Open Sans', sans-serif; }
 
 .header {
-  z-index: 10;
+  z-index: 101;
   position: relative;
   height: 60px;
   width: 100%;
@@ -603,6 +603,7 @@ p {
   width: 100%;
   overflow-y: scroll; }
   .dashboardDriver .menuleft {
+    z-index: 100;
     width: 255px;
     margin-top: -60px;
     padding-top: 60px;

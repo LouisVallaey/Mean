@@ -15,11 +15,13 @@ import { ListingpageUserComponent } from './listingUsers/listingpageUser.compone
 import { DriverpageComponent } from './driverpage/driverpage.component';
 import { DeliveredpageComponent } from './driverpage/deliveredpage/deliveredpage.component';
 import { AvailablepageComponent } from './driverpage/availablepage/availablepage.component';
+import { CounterpageComponent } from './driverpage/counter/counter.component';
 import { ActivepageComponent } from './driverpage/activepage/activepage.component';
 import { UserService } from './_services/user.service';
 import { PackageService } from './_services/package.service';
 import { AlertComponent } from './_directives/alert.component';
 import { AlertService } from './_services/alert.service';
+import { DashboardService} from './_services/dashboard.service';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { AuthenticationService } from './_services/authentication.service';
 import { AuthGuard } from './_guards/auth.guard';
@@ -36,6 +38,7 @@ import { from } from 'rxjs/observable/from';
     AvailablepageComponent,
     DeliveredpageComponent,
     ActivepageComponent,
+    CounterpageComponent,
     ApplypageComponent,
     AlertComponent,
     AppComponent
@@ -53,7 +56,8 @@ import { from } from 'rxjs/observable/from';
   UserService,
   AlertService,
   AuthenticationService,
-  AuthGuard
+  AuthGuard,
+  DashboardService
   ], 
   bootstrap: [AppComponent]
 })

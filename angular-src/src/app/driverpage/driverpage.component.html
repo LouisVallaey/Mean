@@ -5,34 +5,26 @@
             <p>{{currentUser.firstName}} {{currentUser.lastName}}</p>
         </div>
         <div class="menu">
-            <div class="menuitem" [routerLink]="['/dashboard/available']">
+            <div class="menuitem" (click)="setAvailablePage()">
                 <p>Available packages</p>
                 <div></div>
             </div>
-            <div class="menuitem" [routerLink]="['/dashboard/active']">
+            <div class="menuitem" (click)="setActivePage()">
                 <p>Active packages</p>
                 <div></div>
             </div>
-            <div class="menuitem" [routerLink]="['/dashboard/delivered']">
+            <div class="menuitem" (click)="setDeliveredPage()">
                 <p>Delivered packages</p>
                 <div></div>
             </div>
         </div>
     </div>
-    <div class="workspace">
-        <div class="overview">
-            <div class="box">
-                <h1>{{availablecount}}</h1>
-                <p>Available packages</p>
-            </div>
-            <div class="box">
-                <h1>{{activecount}}</h1>
-                <p>Active packages</p>
-            </div>
-            <div class="box">
-                <h1>{{deliveredcount}}</h1>
-                <p>Delivered packages</p>
-            </div>
-        </div>
-    </div>
+
+<app-counterpage></app-counterpage>
+<app-availablepage></app-availablepage>
+<app-activepage></app-activepage>
+<app-deliveredpage></app-deliveredpage>
+
+
+    
 </div>
