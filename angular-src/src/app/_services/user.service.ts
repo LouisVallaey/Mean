@@ -12,7 +12,7 @@ export class UserService {
     }
  
     getAll() {
-        return this.http.get(this.prepEndpoint('/user')).map((response: Response) => response.json());
+         return this.http.get(this.prepEndpoint('/user')).map((response: Response) => response.json());
     }
  
     getById(_id: string) {

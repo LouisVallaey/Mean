@@ -1,29 +1,29 @@
-
-    <div class="workspace" [@rightCenter]="stateExpression">
-        <div class="tablepackage">
-            <div class="head">
-                <p>Delivered packages</p>
-            </div>
-            <div class="list">
-                <div class="item" *ngFor="let package of deliveredPackages">
-                    <div class="ctn">
-                        <p></p>
+<div class="workspace" [@rightCenter]="stateExpression">
+    <div class="tablepackage">
+        <div class="head">
+            <p>Delivered packages</p>
+        </div>
+        <div class="list">
+                <div class="item" *ngIf="deliveredPackages === undefined || deliveredPackages.length === 0">
+                        <p style="text-align:center; padding: 10px;
+                        color: rgba(0, 0, 0, 0.6);">No packages available</p>
                     </div>
-                    <div style="text-align:center;">
-                        <div class="info" style="width:45%;text-align:left;">
-                            <p>Sender</p>
-                            <p>{{package.addressline1}} {{package.addressline2}}</p>
-                            <p>{{package.postalcode}} {{package.city}}</p>
-                            <p>{{package.country}}</p>
-                        </div>
-                        <div class="info" style="width:45%;text-align:left;">
-                            <p>Receiver</p>
-                            <p>{{package.addressline1Rec}} {{package.addressline2Rec}}</p>
-                            <p>{{package.postalcodeRec}} {{package.cityRec}}</p>
-                            <p>{{package.countryRec}}</p>
-                        </div>
+            <div class="item" *ngFor="let package of deliveredPackages">
+                <div class="infoflex" style="width:100%;">
+                    <div class="info">
+                        <p>Sender</p>
+                        <p>{{package.addressline1}} {{package.addressline2}}</p>
+                        <p>{{package.postalcode}} {{package.city}}</p>
+                        <p>{{package.country}}</p>
+                    </div>
+                    <div class="info">
+                        <p>Receiver</p>
+                        <p>{{package.addressline1Rec}} {{package.addressline2Rec}}</p>
+                        <p>{{package.postalcodeRec}} {{package.cityRec}}</p>
+                        <p>{{package.countryRec}}</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

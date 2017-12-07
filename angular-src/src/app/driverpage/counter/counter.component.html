@@ -1,14 +1,14 @@
 <div class="workspace" [@rightCenter]="stateExpression">
     <div class="overview">
-        <div class="box">
+        <div class="box" (click)="setAvailablePage()">
             <h1>{{availablecount}}</h1>
             <p>Available packages</p>
         </div>
-        <div class="box">
+        <div class="box" (click)="setActivePage()">
             <h1>{{activecount}}</h1>
             <p>Active packages</p>
         </div>
-        <div class="box">
+        <div class="box" (click)="setDeliveredPage()">
             <h1>{{deliveredcount}}</h1>
             <p>Delivered packages</p>
         </div>

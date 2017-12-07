@@ -712,61 +712,95 @@ p {
               text-align: left;
               color: #41a3ff;
               font-size: 20px; }
-          .dashboardDriver .workspace .tablepackage .list .item .info {
-            text-align: left;
-            display: inline-block;
-            margin: 4px 0 4px 0;
-            border: 1px solid #dddddd;
-            width: 35%;
-            height: 85px;
-            border-radius: 2px;
-            padding-top: 4px;
-            padding-bottom: 4px; }
-            .dashboardDriver .workspace .tablepackage .list .item .info p {
-              padding-left: 15px;
-              font-size: 15px; }
-              .dashboardDriver .workspace .tablepackage .list .item .info p:nth-child(1) {
-                color: #41a3ff;
-                font-size: 16px; }
-          .dashboardDriver .workspace .tablepackage .list .item .status {
-            vertical-align: top;
-            height: 85px;
-            display: inline-block;
-            margin: 4px 0 4px 0;
-            border: 1px solid #dddddd;
-            width: 24%;
-            border-radius: 2px;
-            padding-top: 4px;
-            padding-bottom: 4px; }
-            .dashboardDriver .workspace .tablepackage .list .item .status p {
-              padding-left: 15px;
-              font-size: 15px; }
-              .dashboardDriver .workspace .tablepackage .list .item .status p:nth-child(1) {
-                color: #41a3ff;
-                font-size: 16px; }
-            .dashboardDriver .workspace .tablepackage .list .item .status button {
+          .dashboardDriver .workspace .tablepackage .list .item .infoflex {
+            display: flex;
+            justify-content: center;
+            width: 100%; }
+            .dashboardDriver .workspace .tablepackage .list .item .infoflex .info {
+              text-align: left;
+              margin: 4px 4px 4px 4px;
+              border: 1px solid #dddddd;
+              width: 100%;
+              border-radius: 2px;
+              padding-top: 4px;
+              padding-bottom: 4px; }
+              .dashboardDriver .workspace .tablepackage .list .item .infoflex .info p {
+                padding-left: 15px;
+                font-size: 15px; }
+                .dashboardDriver .workspace .tablepackage .list .item .infoflex .info p:nth-child(1) {
+                  color: #41a3ff;
+                  font-size: 16px; }
+            .dashboardDriver .workspace .tablepackage .list .item .infoflex .status {
+              text-align: center;
+              vertical-align: top;
+              display: inline-block;
+              margin: 4px 4px 4px 4px;
+              border: 1px solid #dddddd;
               width: 90%;
-              height: 50px;
-              margin-top: 7px;
-              outline: none;
-              transition: 0.4s;
-              background-color: #41a3ff;
-              border-radius: 3px;
-              border: none;
-              color: white;
-              font-weight: bold;
-              font-size: 15px; }
-              .dashboardDriver .workspace .tablepackage .list .item .status button:hover {
-                background-color: #2f9bff;
-                cursor: pointer; }
+              border-radius: 2px;
+              padding-top: 4px;
+              padding-bottom: 4px; }
+              .dashboardDriver .workspace .tablepackage .list .item .infoflex .status p {
+                text-align: left;
+                padding-left: 15px;
+                font-size: 15px; }
+                .dashboardDriver .workspace .tablepackage .list .item .infoflex .status p:nth-child(1) {
+                  color: #41a3ff;
+                  font-size: 16px; }
+              .dashboardDriver .workspace .tablepackage .list .item .infoflex .status button {
+                width: 100%;
+                min-height: 45px;
+                word-wrap: break-word;
+                padding: 3px;
+                margin: 7px 6px 6px 7px;
+                outline: none;
+                transition: 0.4s;
+                background-color: #fdfdfd;
+                border-radius: 3px;
+                border: 1px solid #dddddd;
+                color: #41a3ff;
+                font-size: 14px;
+                text-align: center; }
+                .dashboardDriver .workspace .tablepackage .list .item .infoflex .status button:hover {
+                  background-color: rgba(47, 161, 255, 0.3);
+                  cursor: pointer; }
+              .dashboardDriver .workspace .tablepackage .list .item .infoflex .status .selectedbtn {
+                background-color: #41a3ff;
+                border: none;
+                color: white; }
+                .dashboardDriver .workspace .tablepackage .list .item .infoflex .status .selectedbtn:hover {
+                  background-color: #2f9bff;
+                  cursor: pointer; }
+              .dashboardDriver .workspace .tablepackage .list .item .infoflex .status .bar {
+                display: flex; }
+                .dashboardDriver .workspace .tablepackage .list .item .infoflex .status .bar .statusbar {
+                  height: 20px;
+                  border-radius: 3px;
+                  border: 1px solid rgba(0, 0, 0, 0.2);
+                  width: 75%;
+                  margin: 0 auto 0 auto; }
+                  .dashboardDriver .workspace .tablepackage .list .item .infoflex .status .bar .statusbar div {
+                    background-color: #6bff6b;
+                    height: 100%; }
+                  .dashboardDriver .workspace .tablepackage .list .item .infoflex .status .bar .statusbar .ds {
+                    width: 1%; }
+                  .dashboardDriver .workspace .tablepackage .list .item .infoflex .status .bar .statusbar .pp {
+                    width: 10%; }
+                  .dashboardDriver .workspace .tablepackage .list .item .infoflex .status .bar .statusbar .pt {
+                    width: 50%; }
+                  .dashboardDriver .workspace .tablepackage .list .item .infoflex .status .bar .statusbar .pd {
+                    width: 100%; }
           .dashboardDriver .workspace .tablepackage .list .item .add {
-            float: right;
+            transition: 0.5s;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            margin-right: 4px;
+            border-radius: 3px;
+            width: 80px;
+            text-align: center;
             height: 100%;
             background-color: #b2ffb6;
-            color: #40c746;
-            position: absolute;
-            right: 0;
-            top: 0; }
+            color: #40c746; }
             .dashboardDriver .workspace .tablepackage .list .item .add p {
               font-size: 18px;
               line-height: 30px;
@@ -774,8 +808,63 @@ p {
             .dashboardDriver .workspace .tablepackage .list .item .add:hover {
               background-color: #8cff92;
               cursor: pointer; }
+          .dashboardDriver .workspace .tablepackage .list .item .del {
+            transition: 0.5s;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            margin-right: 4px;
+            border-radius: 3px;
+            width: 80px;
+            text-align: center;
+            height: 100%;
+            background-color: #ff9595;
+            color: #c74040; }
+            .dashboardDriver .workspace .tablepackage .list .item .del p {
+              font-size: 28px;
+              line-height: 30px;
+              padding: 33px 5px 33px 5px; }
+            .dashboardDriver .workspace .tablepackage .list .item .del:hover {
+              background-color: #ff8c8c;
+              cursor: pointer; }
+          .dashboardDriver .workspace .tablepackage .list .item .deli {
+            transition: 0.5s;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            margin-right: 4px;
+            border-radius: 3px;
+            width: 120px;
+            text-align: center;
+            height: 100%;
+            background-color: #ff9595;
+            color: #c74040; }
+            .dashboardDriver .workspace .tablepackage .list .item .deli p {
+              font-size: 28px;
+              line-height: 30px;
+              padding: 33px 5px 33px 5px; }
+            .dashboardDriver .workspace .tablepackage .list .item .deli:hover {
+              background-color: #ff8c8c;
+              cursor: pointer; }
+          .dashboardDriver .workspace .tablepackage .list .item .addi {
+            transition: 0.5s;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            margin-right: 4px;
+            border-radius: 3px;
+            width: 120px;
+            text-align: center;
+            height: 100%;
+            background-color: #b2ffb6;
+            color: #40c746; }
+            .dashboardDriver .workspace .tablepackage .list .item .addi p {
+              font-size: 18px;
+              line-height: 30px;
+              padding: 33px 5px 33px 5px; }
+            .dashboardDriver .workspace .tablepackage .list .item .addi:hover {
+              background-color: #8cff92;
+              cursor: pointer; }
 
 .alert {
+  z-index: 100;
   transition: 4s;
   position: absolute;
   top: 60px;

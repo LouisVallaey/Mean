@@ -44,7 +44,7 @@ export class ListingpageUserComponent implements OnInit {
     addPackage() {
         this.model._driverId = "";
         this.model._userId = this.currentUser._id;
-        this.model.status = "package pickup by driver";
+        this.model.status = "Package pickup";
         this.packageService.create(this.model).subscribe(
             data => {
                 this.add = false;

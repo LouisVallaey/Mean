@@ -29,7 +29,6 @@ function getAll() {
 function update(_id, packageParam) {
     var deferred = Q.defer();
     var set = {
-        _id: packageParam._id,
         _userId: packageParam._userId,
         _driverId : packageParam._driverId,
         addressline1: packageParam.addressline1,
@@ -46,7 +45,7 @@ function update(_id, packageParam) {
         weight: packageParam.weight,
         status: packageParam.status
     };
-    db.orders.update(
+    db.packages.update(
         { _id: mongo.helper.toObjectID(_id) },
         { $set: set },
         function (err, doc) {

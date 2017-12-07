@@ -27,6 +27,13 @@ export class DriverpageComponent implements OnInit {
     ngOnInit() {
         this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
         this.setCounterPage();
+        this.packageService.getAll().subscribe(
+            data => {
+               this.dashboardService.setPackages(data);
+            },
+            error => {
+                this.alertService.error(error);
+            });
     }
 
     setActivePage(){

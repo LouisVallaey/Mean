@@ -1,34 +1,82 @@
-
-
-    <div class="workspace" [@rightCenter]="stateExpression">
-        <div class="tablepackage">
-            <div class="head">
-                <p>Active packages</p>
+<div class="workspace" [@rightCenter]="stateExpression">
+    <div class="tablepackage">
+        <div class="head">
+            <p>Active packages</p>
+        </div>
+        <div class="list">
+            <div class="item" *ngIf="activePackages === undefined || activePackages.length === 0">
+                <p style="text-align:center; padding: 10px; color: rgba(0, 0, 0, 0.6);">No packages available</p>
             </div>
-            <div class="list">
-                <div class="item" *ngFor="let package of activePackages">
-                    <div class="ctn">
-                        <p></p>
+            <div class="item" *ngFor="let package of activePackages">
+                <div class="infoflex">
+                    <div class="info">
+                        <p>Sender</p>
+                        <p>{{package.addressline1}} {{package.addressline2}}</p>
+                        <p>{{package.postalcode}} {{package.city}}</p>
+                        <p>{{package.country}}</p>
                     </div>
-                    <div style="text-align:center;">
-                        <div class="info">
-                            <p>Sender</p>
-                            <p>{{package.addressline1}} {{package.addressline2}}</p>
-                            <p>{{package.postalcode}} {{package.city}}</p>
-                            <p>{{package.country}}</p>
+                    <div class="info">
+                        <p>Receiver</p>
+                        <p>{{package.addressline1Rec}} {{package.addressline2Rec}}</p>
+                        <p>{{package.postalcodeRec}} {{package.cityRec}}</p>
+                        <p>{{package.countryRec}}</p>
+                    </div>
+                    <div class="status" *ngIf="package.status === 'Driver Selected'">
+                            <div class="bar">
+                                    <p>Status</p>
+                                    <div class="statusbar"><div class="ds"></div></div>
+                                </div>
+                        <div style="display:flex;">
+                            <button (click)="ppStatus(package)">Pickup</button>
+                            <button>Transit</button>
+                            <button>Delivered</button>
                         </div>
-                        <div class="info">
-                            <p>Receiver</p>
-                            <p>{{package.addressline1Rec}} {{package.addressline2Rec}}</p>
-                            <p>{{package.postalcodeRec}} {{package.cityRec}}</p>
-                            <p>{{package.countryRec}}</p>
+                    </div>
+                    <div class="status" *ngIf="package.status === 'Package pickup'" (click)=" updateStatus(package)">
+                            <div class="bar">
+                                    <p>Status</p>
+                                    <div class="statusbar"><div class="pp"></div></div>
+                                </div>
+                        <div style="display:flex;">
+                            <button class="selectedbtn">Pickup</button>
+                            <button (click)="ptStatus(package)">Transit</button>
+                            <button (click)="pdStatus(package)">Delivered</button>
                         </div>
-                        <div class="status">
-                            <p>Status</p>
-                            <button>package pickup</button>
+                    </div>
+                    <div class="status" *ngIf="package.status === 'Package in transit'" (click)=" updateStatus(package)">
+                            <div class="bar">
+                                    <p>Status</p>
+                                    <div class="statusbar"><div class="pt"></div></div>
+                                </div>
+                        <div style="display:flex;">
+                            <button (click)="ppStatus(package)">Pickup</button>
+                            <button class="selectedbtn">Transit</button>
+                            <button (click)="pdStatus(package)">Delivered</button>
+                        </div>
+                    </div>
+                    <div class="status" *ngIf="package.status === 'Package Delivered'" (click)=" updateStatus(package)">
+                            <div class="bar">
+                                    <p>Status</p>
+                                    <div class="statusbar"><div class="pd"></div></div>
+                                </div>
+                        <div style="display:flex;">
+                            <button>Pickup</button>
+                            <button>Transit</button>
+                            <button class="selectedbtn">Delivered</button>
+                        </div>
+                    </div>
+                    <div class="deli" (click)="verwijderDriverid(package)" *ngIf="package.status == 'Driver Selected'">
+                        <div>
+                            <p>-</p>
+                        </div>
+                    </div>
+                    <div class="addi" (click)="confirmStatus(package)" *ngIf="package.status == 'Package Delivered'">
+                        <div>
+                            <p>OK</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

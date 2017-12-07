@@ -18,10 +18,10 @@ import { trigger, state, animate, transition, style } from '@angular/animations'
     animations: [trigger(
         'rightCenter',
         [
-            state('right, void', style({left:'-400%', position:'absolute'})),
-            state('center', style({left:'0', position:'relative'})),
-          transition(
-              'right <=> center', [animate('0.5s ease-in-out'), animate('0.5s ease-in-out')]),
+            state('right, void', style({ left: '-400%', position: 'absolute' })),
+            state('center', style({ left: '0', position: 'relative' })),
+            transition(
+                'right <=> center', [animate('0.5s ease-in-out'), animate('0.5s ease-in-out')]),
         ])],
 })
 export class CounterpageComponent implements OnInit {
@@ -30,9 +30,9 @@ export class CounterpageComponent implements OnInit {
     availablecount: number = 0;
     deliveredcount: number = 0;
 
-    stateExpression: string ="center";
-    
-        constructor(
+    stateExpression: string = "center";
+
+    constructor(
         private router: Router,
         private userService: UserService,
         private alertService: AlertService,
@@ -42,23 +42,25 @@ export class CounterpageComponent implements OnInit {
     ngOnInit() {
         this.dashboardService.getCounterPage().subscribe(
             e => {
-                if(e === false) 
-                {
+                if (e === false) {
                     this.stateExpression = "right";
                 }
                 else {
                     this.stateExpression = "center"
                 }
-        })
+            })
         this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
-        this.packageService.getAll().subscribe(
+        this.dashboardService.getPackages().subscribe(
             data => {
+                this.activecount = 0;
+                this.availablecount = 0;
+                this.deliveredcount = 0;
                 data.forEach(element => {
-                    if (element._driverId == this.currentUser._id && element._userId != "") {
-                        this.activecount = this.activecount + 1     
-                    }else if(element._driverId == "") {
-                        this.availablecount = this.availablecount + 1 
-                    }else if (element._userId == "" && element._driverId == this.currentUser._id) {
+                    if (element._driverId == this.currentUser._id && element.status != "Delivery confirmed") {
+                        this.activecount = this.activecount + 1
+                    } else if (element._driverId == "") {
+                        this.availablecount = this.availablecount + 1
+                    } else if (element.status == "Delivery confirmed" && element._driverId == this.currentUser._id) {
                         this.deliveredcount = this.deliveredcount + 1
                     }
                 });
@@ -66,5 +68,17 @@ export class CounterpageComponent implements OnInit {
             error => {
                 this.alertService.error(error);
             });
+    }
+    setActivePage(){
+        this.dashboardService.setActivePage();
+    }
+    setAvailablePage(){
+        this.dashboardService.setAvailablePage();
+    }
+    setDeliveredPage(){
+        this.dashboardService.setDeliveredPage();
+    }
+    setCounterPage(){
+        this.dashboardService.setCounterPage();
     }
 }

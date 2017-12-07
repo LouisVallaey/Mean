@@ -48,10 +48,11 @@ export class DeliveredpageComponent implements OnInit {
                 }
         })
         this.currentUser = JSON.parse(localStorage.getItem("currentUser"));
-        this.packageService.getAll().subscribe(
+        this.dashboardService.getPackages().subscribe(
             data => {
+                this.deliveredPackages = [];
                 data.forEach(element => {
-                    if (element._userId == "" && element._driverId == this.currentUser._id) {
+                    if (element.status == "Delivery confirmed" && element._driverId == this.currentUser._id) {
                         this.deliveredPackages.push(element);
                     }
                 });

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs/Subject';
+import { Package } from '../_models/package';
  
 //injectable
 //kan in alle components gezet worden om succes/error bootschappen te tonen
@@ -9,9 +10,8 @@ export class DashboardService {
     private activePage = new Subject<any>();
     private availablePage = new Subject<any>();
     private counterPage = new Subject<any>();
-    private deliveredPage = new Subject<any>();
-
- 
+    private deliveredPage = new Subject<any>(); 
+    private packages = new Subject<any>(); 
     constructor() {
         
     }
@@ -42,7 +42,9 @@ export class DashboardService {
         this.counterPage.next(false);
         this.deliveredPage.next(true);
     }
- 
+    setPackages(packages : Package[]){
+        this.packages.next(packages);
+    }
     getActivePage(): Observable<any> {
         return this.activePage.asObservable();
     }
@@ -54,5 +56,8 @@ export class DashboardService {
     }
     getCounterPage(): Observable<any> {
         return this.counterPage.asObservable();
+    }
+    getPackages(): Observable<any> {
+        return this.packages.asObservable();
     }
 }
