@@ -27,8 +27,8 @@ const package = require('./controllers/package.controller');
 
 
 // Port Number: 1st for development 2nd for prod 
-const port =4000;
-//const port = process.env.PORT || 8080;
+//const port =4000;
+const port = process.env.PORT || 8080;
 
 // CORS Middleware
 app.use(cors());

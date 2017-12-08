@@ -548,7 +548,8 @@ p {
             margin: 0;
             padding-left: 43px;
             font-size: 18px;
-            color: rgba(0, 0, 0, 0.6);
+            color: #41a3ff;
+            cursor: pointer;
         }
         h1 {
             position: absolute;
@@ -561,13 +562,12 @@ p {
         }
         .close {
             position: absolute;
-            right: 10px;
+            right: 0px;
             top: 5px;
             height: 25px;
             width: 25px;
             background-position: center;
-            background-size: 20px 20px;
-            background-image: url("assets/image/packageb.png");
+            cursor: pointer
         }
     }
 }

@@ -54,5 +54,5 @@ const appRoutes: Routes = [
    }},
    { path: '**', component: HomepageComponent}
 ];
-
 export const routing = RouterModule.forRoot(appRoutes);
+export const routes = appRoutes; 

@@ -463,7 +463,8 @@ p {
       margin: 0;
       padding-left: 43px;
       font-size: 18px;
-      color: rgba(0, 0, 0, 0.6); }
+      color: #41a3ff;
+      cursor: pointer; }
     .listingUserAdd .head h1 {
       position: absolute;
       font-family: 'Open Sans', sans-serif;
@@ -474,13 +475,12 @@ p {
       color: #41a3ff; }
     .listingUserAdd .head .close {
       position: absolute;
-      right: 10px;
+      right: 0px;
       top: 5px;
       height: 25px;
       width: 25px;
       background-position: center;
-      background-size: 20px 20px;
-      background-image: url("assets/image/packageb.png"); }
+      cursor: pointer; }
 
 .listingUserContent {
   position: relative;
@@ -595,6 +595,15 @@ p {
           padding: 0 3px 0 3px;
           color: rgba(0, 0, 0, 0.7);
           font-size: 16px; }
+    .listingUserContent .infopack .close {
+      position: absolute;
+      right: 0px;
+      top: 5px;
+      height: 25px;
+      width: 25px;
+      background-position: center;
+      cursor: pointer;
+      color: #41a3ff; }
 
 .dashboardDriver {
   margin-top: -60px;

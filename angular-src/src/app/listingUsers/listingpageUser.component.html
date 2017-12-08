@@ -3,7 +3,7 @@
     <div *ngIf="!next">
         <div class="head">
             <h1>Add package</h1>
-            <div class="close"></div>
+            <div class="close" (click)=showAddPackage(false)><p>x</p></div>
         </div>
         <div class="cred">
             <form (ngSubmit)="f.form.valid && addPackage()" #f="ngForm" novalidate>
