@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
+html {
+  min-height: 100%; }
+
 body {
   font-family: 'Open Sans', sans-serif;
   margin: 0 auto;
@@ -302,7 +305,6 @@ p {
   z-index: 5;
   background-color: white;
   position: relative;
-  margin-top: 60px;
   width: 100%;
   height: 60px;
   border-top: 1px solid rgba(0, 0, 0, 0.2); }
@@ -595,15 +597,6 @@ p {
           padding: 0 3px 0 3px;
           color: rgba(0, 0, 0, 0.7);
           font-size: 16px; }
-    .listingUserContent .infopack .close {
-      position: absolute;
-      right: 0px;
-      top: 5px;
-      height: 25px;
-      width: 25px;
-      background-position: center;
-      cursor: pointer;
-      color: #41a3ff; }
 
 .dashboardDriver {
   margin-top: -60px;
