@@ -45,7 +45,7 @@ app.use(passport.session());
 require('./config/passport')(passport);
 
 
-app.use(expressJwt({
+/* app.use(expressJwt({
   secret: config.secret,
   getToken: function (req) {
       if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
@@ -55,7 +55,7 @@ app.use(expressJwt({
       }
       return null;
   }
-}).unless({ path: ['/users/authenticate', '/users/register'] })); 
+}).unless({ path: ['/users/authenticate', '/users/register'] }));  */
 
 //api
 app.use('/user', user);
